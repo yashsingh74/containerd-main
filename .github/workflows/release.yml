@@ -83,9 +83,15 @@ jobs:
       - name: Checkout containerd
         uses: actions/checkout@v2
         with:
-          repository: containerd/containerd
-          ref: ${{ github.ref }}
-          path: src/github.com/containerd/containerd
+          fetch-depth: 0
+          #repository: containerd/containerd
+          #ref: ${{ github.ref }}
+          #path: src/github.com/containerd/containerd
+      - name: fetched tag
+        if: startsWith(github.ref, 'refs/tags/')
+        run: /usr/bin/git -c protocol.version=2 fetch --prune --progress
+            --no-recurse-submodules origin +"$GITHUB_REF:$GITHUB_REF"
+
 
       - name: HCS Shim commit
         id: hcsshim_commit
