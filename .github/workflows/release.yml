@@ -84,9 +84,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          #repository: containerd/containerd
+          repository: containerd/containerd
           #ref: ${{ github.ref }}
-          #path: src/github.com/containerd/containerd
+          path: src/github.com/containerd/containerd
       - name: fetched tag
         if: startsWith(github.ref, 'refs/tags/')
         run: /usr/bin/git -c protocol.version=2 fetch --prune --progress
