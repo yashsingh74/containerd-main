@@ -17,6 +17,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
           path: src/github.com/containerd/containerd
+        working-directory: src/github.com/containerd/containerd
       
       - name: Check signature
         run: |
