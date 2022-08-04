@@ -36,6 +36,7 @@ jobs:
           cd release-tool
           go build 
           echo "Tagggggggggg is ${releasever}"
+          ls ../releases
           ./release-tool -l -d -n -t ${releasever} ../releases/v1.5.11.toml  > /tmp/${releasever}-notes
           cat /tmp/${releasever}-notes
           echo "Printing the testing things"
