@@ -1,12 +1,12 @@
 name: "CodeQL Scan"
 
-on:
-  push:
-  schedule:
-    - cron: '0 0 * * 0'
-  pull_request:
-    paths:
-      - '.github/workflows/codeql.yml'
+#on:
+#  push:
+#  schedule:
+#    - cron: '0 0 * * 0'
+#  pull_request:
+#    paths:
+#      - '.github/workflows/codeql.yml'
 
 jobs:
   CodeQL-Build:
