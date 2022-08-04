@@ -6,7 +6,7 @@ on:
 name: Containerd midstream Release
 
 jobs:
-  build:
+  test:
     name: Build Release 
     runs-on: ubuntu-18.04
     timeout-minutes: 4
