@@ -38,7 +38,7 @@ jobs:
           cd release-tool
           go build 
           cd ..
-          ls
-          pwd
+          release-tool/release-tool -l -d -n -t ${releasever} releases/v1.5.11.toml  > /tmp/${releasever}-notes
+          cat /tmp/${releasever}-notes
           echo "Printing the testing things"
         working-directory: src/github.com/containerd/containerd
