@@ -17,11 +17,6 @@ jobs:
         with:
           ref: ${{ github.ref }}
           path: src/github.com/containerd/containerd
-      
-      - name: Check signature
-        run: |
-          releasever=${{ github.ref }}
-          releasever="${releasever#refs/tags/}"
 
       - name: Install Go
         uses: actions/setup-go@v2
@@ -34,10 +29,13 @@ jobs:
           MOS: ${{ matrix.os }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          releasever=${{ github.ref }}
+          releasever="${releasever#refs/tags/}"
+          echo "Tag is ${releasever}"
           git clone https://github.com/containerd/release-tool.git
           cd release-tool
           go build 
-          echo "${releasever}"
+          echo "Tagggggggggg is ${releasever}"
           ./release-tool -l -d -n -t ${releasever} ../releases/v1.5.11.toml  > /tmp/${releasever}-notes
           cat /tmp/${releasever}-notes
           echo "Printing the testing things"
