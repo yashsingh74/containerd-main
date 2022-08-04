@@ -6,13 +6,6 @@ on:
 name: Containerd midstream Release
 
 jobs:
-  check:
-    name: Check Signed Tag
-    runs-on: ubuntu-18.04
-    timeout-minutes: 5
-    outputs:
-      stringver: ${{ steps.contentrel.outputs.stringver }}
-
   test:
     name: Run the test Release 
     runs-on: ubuntu-18.04
