@@ -37,7 +37,7 @@ jobs:
           go build 
           echo "Tagggggggggg is ${releasever}"
           ls ../releases
-          ./release-tool -l -d -n -t ${releasever} ../releases/v1.5.11.toml  > /tmp/${releasever}-notes
-          cat /tmp/${releasever}-notes
+          ./release-tool -l -d -n -t v1.5.11 ../releases/v1.5.11.toml  > /tmp/v1.5.11-notes
+          cat /tmp/v1.5.11-notes
           echo "Printing the testing things"
         working-directory: src/github.com/containerd/containerd
